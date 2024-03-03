@@ -16,18 +16,19 @@ public class Shoot : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             //Enemy will be detected, shoot a bullet
-            Fire();
+            Vector3 direction = other.transform.position - firePoint.position;
+            Fire(direction);
         }
     }
 
     // Update is called once per frame
-    void Fire()
+    void Fire(Vector3 direction)
     {
         // Create a new bullet
-        GameObject bullet = Instantiate(Bullet, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(Bullet, firePoint.position, Quaternion.LookRotation(direction));
 
         // Add force to the bullet 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
+        rb.AddForce(direction.normalized * bulletSpeed, ForceMode.Impulse);
     }
 }
