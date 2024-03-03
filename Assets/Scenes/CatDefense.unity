@@ -158,7 +158,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 11907472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.98, y: 0.25, z: 2.05}
+  m_LocalPosition: {x: -1.15, y: 0.25, z: 2.05}
   m_LocalScale: {x: 0.75, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,10 +252,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &35131698
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +659,6 @@ GameObject:
   - component: {fileID: 789318774}
   - component: {fileID: 789318773}
   - component: {fileID: 789318772}
-  - component: {fileID: 789318771}
   - component: {fileID: 789318775}
   - component: {fileID: 789318776}
   - component: {fileID: 789318777}
@@ -670,29 +669,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &789318771
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789318770}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &789318772
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -792,9 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b305f1230e494d48b69dce2c40a29f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redMaterial: {fileID: 2100000, guid: 6cd78d14ad1c29b4b849662ed26d3c4e, type: 2}
-  originalMaterial: {fileID: 2100000, guid: e825551c007753242a369e54a8e32b3d, type: 2}
-  upwardMovement: 0.2
 --- !u!114 &789318777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,7 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 38072974775768820, guid: c1b70d3bcb8e3e54195f55428a670464, type: 3}
   firePoint: {fileID: 615052863}
-  bulletSpeed: 4
+  bulletSpeed: 30
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +964,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1124,7 +1097,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

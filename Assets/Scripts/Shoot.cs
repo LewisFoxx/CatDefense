@@ -17,7 +17,10 @@ public class Shoot : MonoBehaviour
         {
             //Enemy will be detected, shoot a bullet
             Vector3 direction = other.transform.position - firePoint.position;
-            Fire(direction);
+            Fire(direction.normalized);
+
+           
+
         }
     }
 
