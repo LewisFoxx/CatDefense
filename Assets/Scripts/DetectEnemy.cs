@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
 {
-    public Material redMaterial; // We can add this in the inspector
+    public Material redMaterial; // We can add this in the inspector. Red 
+    public Material originalMaterial; // Change in inspector to Green
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
@@ -18,8 +19,12 @@ public class DetectEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider other)
     {
-        
+        if(other.gameObject.tag == "Enemy")
+        {
+            // Enemy has left the detection zone
+            GetComponent<Renderer>().material = originalMaterial;
+        }
     }
 }
