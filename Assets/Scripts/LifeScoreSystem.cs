@@ -7,7 +7,7 @@ public class LifeScoreSystem : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI roundText;
     public bool hasPlayerFailed = false; // whether the player has lost the game or not
-    private int lives = 1;
+    private int lives = 40;
     private int money = 650;
     private int round = 0;
 
