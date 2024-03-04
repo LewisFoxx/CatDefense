@@ -13,6 +13,7 @@ public class RoundManager : MonoBehaviour
     public bool roundOngoing = false; // Whether a round is ongoing
     public int currentRound = 0; // Current round number
     private bool wasRoundOngoing = false; // Previous round status
+    
 
 
     // Update is called once per frame
@@ -54,13 +55,16 @@ public class RoundManager : MonoBehaviour
         wasRoundOngoing = roundOngoing;
     }
 
+    //Game over screen functionality
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }

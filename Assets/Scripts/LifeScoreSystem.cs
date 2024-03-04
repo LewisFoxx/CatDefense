@@ -6,7 +6,8 @@ public class LifeScoreSystem : MonoBehaviour
     public TextMeshProUGUI lifeText;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI roundText;
-    private int lives = 40;
+    public bool hasPlayerFailed = false; // whether the player has lost the game or not
+    private int lives = 1;
     private int money = 650;
     private int round = 0;
 
@@ -23,8 +24,19 @@ public class LifeScoreSystem : MonoBehaviour
 
     public void DecreaseLives()
     {
-        lives--;
-        UpdateLivesUI();
+        if (lives > 0)
+        {
+            lives--;
+            UpdateLivesUI();
+        }
+        
+        // If lives reach 0 then call the gameOver function, displaying the gameover screen
+        if (lives <= 0)
+        {
+            // Call gameOver() in RoundManager
+            FindObjectOfType<RoundManager>().gameOver();
+            hasPlayerFailed = true;
+}
     }
 
     private void UpdateLivesUI()
@@ -33,14 +45,21 @@ public class LifeScoreSystem : MonoBehaviour
     }
     public void GiveRoundMoney()
     {
-        money += moneyIncreasePerRound;
-        UpdateMoneyUI();
+        if (money > 0)
+        {
+            money += moneyIncreasePerRound;
+            UpdateMoneyUI();
+        }
+        
     }
 
     public void GiveKillMoney()
     {
-        money += moneyIncreasePerKill;
-        UpdateMoneyUI();
+        if (money > 0)
+        {
+            money += moneyIncreasePerKill;
+            UpdateMoneyUI();
+        }  
     }
 
     private void UpdateMoneyUI()
