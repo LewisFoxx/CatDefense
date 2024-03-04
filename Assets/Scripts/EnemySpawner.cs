@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,40 +6,22 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public Transform enemyPrefab;
-
     public Transform spawnPoint;
-
-    public float timeBetweenWaves = 5f;
+    public RoundManager roundManager;
     public float spawnDelay = 0.5f;
-    private float countdown = 2f;
-
+    public float enemyWaveIncrease;
     private int waveIndex = 0;
 
+    // Number of enemies spawned
+    public static int enemiesSpawned = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public IEnumerator SpawnWave()
     {
-        
-    }
+        roundManager.roundOngoing = true; // Set roundOngoing to true here
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
+        int numberOfEnemies = waveIndex == 0 ? 10 : (int)(enemyWaveIncrease * waveIndex);
 
-        countdown -= Time.deltaTime;
-        
-    }
-
-    IEnumerator SpawnWave()
-    {
-        waveIndex++;
-        
-        for (int i = 0; i < waveIndex; i++) 
+        for (int i = 0; i < numberOfEnemies; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(spawnDelay);
@@ -47,8 +30,9 @@ public class EnemySpawner : MonoBehaviour
         waveIndex++;
     }
 
-    void SpawnEnemy ()
+    void SpawnEnemy()
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemiesSpawned++;
     }
 }
