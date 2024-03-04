@@ -1,21 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
     // Reference to the EnemySpawner script
     public EnemySpawner enemySpawner;
 
-    // Whether round has started
-    public bool roundStart = false;
+    //Reference to the gameover screen
+    public GameObject gameOverScreen;
 
-    // Whether a round is ongoing
-    public bool roundOngoing = false;
+    public bool roundStart = false; // Whether round has started
+    public bool roundOngoing = false; // Whether a round is ongoing
+    public int currentRound = 0; // Current round number
+    private bool wasRoundOngoing = false; // Previous round status
 
-    // Current round number
-    public int currentRound = 0;
-
-    // Previous round status
-    private bool wasRoundOngoing = false;
 
     // Update is called once per frame
     void Update()
@@ -54,5 +52,15 @@ public class RoundManager : MonoBehaviour
 
         // Update wasRoundOngoing
         wasRoundOngoing = roundOngoing;
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void gameOver()
+    {
+        gameOverScreen.SetActive(true);
     }
 }
