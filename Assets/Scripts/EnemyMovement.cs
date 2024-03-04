@@ -9,6 +9,9 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
 
+    // Number of enemies destroyed
+    public static int enemiesDestroyed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<LifeScoreSystem>().DecreaseLives();
+            enemiesDestroyed++;
             return;
         }
 
