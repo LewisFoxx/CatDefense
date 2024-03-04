@@ -3,38 +3,30 @@ using UnityEngine.UI;
 
 public class StartRoundButton : MonoBehaviour
 {
-    public EnemySpawner enemySpawner;  // Reference to the EnemySpawner script
-    private Button button;  // Reference to the Button component
+    // Reference to the RoundManager script
+    public RoundManager roundManager;
+
+    // Reference to the Button component
+    private Button button;
 
     void Start()
     {
-        // Get the button component and add a listener to the click event
+        // Get the Button component
         button = GetComponent<Button>();
+
+        // Add a click listener to the button
         button.onClick.AddListener(StartRound);
     }
 
     void Update()
     {
-        // Disable the button while the round is ongoing
-        if (enemySpawner.roundOngoing)
-        {
-            button.interactable = false;
-        }
-        else
-        {
-            // Enable the button when the round has ended
-            button.interactable = true;
-        }
+        // Make the button interactable when roundStart is false, uninteractable when roundOngoing is true
+        button.interactable = !roundManager.roundOngoing && roundManager != null;
     }
 
     public void StartRound()
     {
-        // Only start the next round if a round is not currently ongoing
-        if (!enemySpawner.roundOngoing)
-        {
-            enemySpawner.roundStart = true;
-            // Immediately disable the button
-            button.interactable = false;
-        }
+        // Set roundStart to true when the button is clicked
+        roundManager.roundStart = true;
     }
 }
