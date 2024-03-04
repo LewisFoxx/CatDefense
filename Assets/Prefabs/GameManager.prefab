@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3878821146860724684}
   - component: {fileID: 4154533348589266027}
   - component: {fileID: 7505363567364028110}
-  - component: {fileID: 2303046375244678439}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -33,7 +32,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2044744830582354835}
-  - {fileID: 4585808881145312975}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4154533348589266027
@@ -51,7 +49,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8106781342019179524, guid: 3372cf20bf9d8dd4a85b1eadf0d94fd9,
     type: 3}
   spawnPoint: {fileID: 0}
-  roundManager: {fileID: 2956999147509029303}
+  roundManager: {fileID: 806407841332030906}
   spawnDelay: 0.5
   enemyWaveIncrease: 20
 --- !u!114 &7505363567364028110
@@ -69,68 +67,9 @@ MonoBehaviour:
   lifeText: {fileID: 0}
   moneyText: {fileID: 0}
   roundText: {fileID: 0}
---- !u!114 &2303046375244678439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689520593333300338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b87f8c7de4eed4baa426d2a96b16bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeText: {fileID: 0}
-  moneyText: {fileID: 0}
-  roundText: {fileID: 0}
---- !u!1 &4498525722934947663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4585808881145312975}
-  - component: {fileID: 2956999147509029303}
-  m_Layer: 0
-  m_Name: RoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4585808881145312975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4498525722934947663}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6362257, y: -5.5925093, z: 10.237499}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3878821146860724684}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2956999147509029303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4498525722934947663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554f0bd06f797ea468c56b543bdf46d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpawner: {fileID: 4154533348589266027}
-  roundStart: 0
-  roundOngoing: 0
+  hasPlayerFailed: 0
+  moneyIncreasePerRound: 101
+  moneyIncreasePerKill: 1
 --- !u!1 &8439659214860734797
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,8 +95,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8439659214860734797}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6362257, y: -5.5925093, z: 10.237499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,5 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 4154533348589266027}
+  gameOverScreen: {fileID: 0}
   roundStart: 0
   roundOngoing: 0
+  currentRound: 0

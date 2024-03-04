@@ -38,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
             FindObjectOfType<LifeScoreSystem>().DecreaseLives();
             enemiesDestroyed++;
             return;
+            
         }
 
         wavepointIndex++;
