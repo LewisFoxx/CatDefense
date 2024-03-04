@@ -8,10 +8,13 @@ public class LifeScoreSystem : MonoBehaviour
     public TextMeshProUGUI roundText;
     private int lives = 40;
     private int money = 650;
+    private int round = 0;
+
+    public int moneyIncreasePerRound = 101;
 
     void Start()
     {
-        // Initialize the life text
+        // Initialize text
         UpdateLivesUI();
         UpdateMoneyUI();
     }
@@ -28,12 +31,17 @@ public class LifeScoreSystem : MonoBehaviour
     }
     public void IncreaseMoney()
     {
-        money++;
+        money += moneyIncreasePerRound;
         UpdateMoneyUI();
     }
 
     private void UpdateMoneyUI()
     {
         moneyText.text = "Money: " + money;
+    }
+
+    public void IncreaseRound()
+    {
+
     }
 }

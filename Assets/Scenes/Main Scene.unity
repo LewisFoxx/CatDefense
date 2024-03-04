@@ -185,6 +185,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2044744830582354835, guid: 11b397ab478e46145a0aee599a238717,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044744830582354835, guid: 11b397ab478e46145a0aee599a238717,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044744830582354835, guid: 11b397ab478e46145a0aee599a238717,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044744830582354835, guid: 11b397ab478e46145a0aee599a238717,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044744830582354835, guid: 11b397ab478e46145a0aee599a238717,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044744830582354835, guid: 11b397ab478e46145a0aee599a238717,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3878821146860724684, guid: 11b397ab478e46145a0aee599a238717,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1295,7 +1325,8 @@ PrefabInstance:
       value: Start&EndPoints
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7299317600192951101, guid: f8554991d9c81f146b100faf74a64fcb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8554991d9c81f146b100faf74a64fcb, type: 3}
