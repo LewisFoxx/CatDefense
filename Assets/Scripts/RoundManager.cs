@@ -41,12 +41,15 @@ public class RoundManager : MonoBehaviour
             enemySpawner.StartCoroutine(enemySpawner.SpawnWave());
             roundStart = false;
             currentRound++;
+
+            // Increase round number
+            FindObjectOfType<LifeScoreSystem>().IncreaseRound();
         }
 
-        // If a round just finished, increase money
+        // If a round just finished, increase player money
         if (wasRoundOngoing && !roundOngoing)
         {
-            FindObjectOfType<LifeScoreSystem>().IncreaseMoney();
+            FindObjectOfType<LifeScoreSystem>().GiveRoundMoney();
         }
 
         // Update wasRoundOngoing

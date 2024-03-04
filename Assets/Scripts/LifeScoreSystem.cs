@@ -11,12 +11,14 @@ public class LifeScoreSystem : MonoBehaviour
     private int round = 0;
 
     public int moneyIncreasePerRound = 101;
+    public int moneyIncreasePerKill = 1;
 
     void Start()
     {
         // Initialize text
         UpdateLivesUI();
         UpdateMoneyUI();
+        UpdateRoundUI();
     }
 
     public void DecreaseLives()
@@ -29,9 +31,15 @@ public class LifeScoreSystem : MonoBehaviour
     {
         lifeText.text = "Lives: " + lives;
     }
-    public void IncreaseMoney()
+    public void GiveRoundMoney()
     {
         money += moneyIncreasePerRound;
+        UpdateMoneyUI();
+    }
+
+    public void GiveKillMoney()
+    {
+        money += moneyIncreasePerKill;
         UpdateMoneyUI();
     }
 
@@ -39,9 +47,13 @@ public class LifeScoreSystem : MonoBehaviour
     {
         moneyText.text = "Money: " + money;
     }
-
+    private void UpdateRoundUI()
+    {
+        roundText.text = "Round: " + round;
+    }
     public void IncreaseRound()
     {
-
+        round++;
+        UpdateRoundUI();
     }
 }
